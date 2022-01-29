@@ -15,6 +15,8 @@ A Python Script to notify New Email By Desktop Notifications
 
 
 Setup :
+      
+      
       1.Run the setup.py -this will install all dependencies
       
       
