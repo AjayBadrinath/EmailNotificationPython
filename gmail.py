@@ -2,14 +2,14 @@ import imaplib
 from win10toast_click import ToastNotifier
 import datetime
 import webbrowser as w
-chrome_path=chrome_path="C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+chrome_path=chrome_path="C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"# Incase you are useing firefox or edge as default browser comment out this line and the preceding line
 w.register('chrome',None,w.BackgroundBrowser(chrome_path))
-def gmail():
+def gmail():#server code
     global y,count,data1,From,f
     imap_host='imap.gmail.com'
     imap_port=993
-    username="gheebiscuitbutterbiscuit@gmail.com"
-    password="butterghee"
+    username=""#Enter your username
+    password=""#enter your password
     server=imaplib.IMAP4_SSL(imap_host,imap_port)
     server.login(username,password)
     status,count=server.select('inbox')
@@ -44,7 +44,7 @@ def gmail():
                       ("(UID BODY[HEADER.FIELDS (DATE)])"))[-1]
     y=y[0][1].decode('utf8')
 def ok():
-    w.get('chrome').open("https://mail.google.com/mail/u/0/#inbox",new=0)    
+    w.get('chrome').open("https://mail.google.com/mail/u/0/#inbox",new=0)    #incase you are using other browser enter the other browser name in the get() field
 def main():
     tstamp=0
     tstamp1=int((datetime.datetime.now()-datetime.timedelta(1)).strftime("%M"))
